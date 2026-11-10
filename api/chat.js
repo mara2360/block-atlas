@@ -22,7 +22,8 @@ module.exports = async function handler(req, res) {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ error: 'Method not allowed' });
   }
-  const key = process.env.GEMINI_API_KEY;
+  // Accept common spellings of the variable name (Vercel env names are case-sensitive).
+  const key = (process.env.GEMINI_API_KEY || process.env.Gemini_API_Key || process.env.GEMINI_KEY || process.env.GOOGLE_API_KEY || '').trim();
   if (!key) return res.status(503).json({ error: 'Chat is not configured' });
 
   let body = req.body;
