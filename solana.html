@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solana — Block Atlas</title>
+<meta name="description" content="Solana protocol profile: architecture, tradeoffs, and what to verify.">
+<meta name="theme-color" content="#04050c">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="space" aria-hidden="true"></div><canvas id="stars" aria-hidden="true"></canvas><div class="scanlines" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="logo" href="index.html" aria-label="Block Atlas home"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2ee6ff"/><stop offset="1" stop-color="#8b5cff"/></linearGradient></defs><path d="M24 3 42 13.5v21L24 45 6 34.5v-21Z" fill="rgba(46,230,255,.06)" stroke="url(#lg)" stroke-width="2.4" stroke-linejoin="round"/><path d="M24 24 6 13.5M24 24l18-10.5M24 24v21" stroke="url(#lg)" stroke-width="1.6" opacity=".7"/><circle cx="24" cy="24" r="4.2" fill="#ff4fd8"/><circle cx="24" cy="24" r="8" fill="none" stroke="#ff4fd8" stroke-opacity=".35"/></svg><span class="logo-text"><b>Block Atlas</b><small>Crypto Field Notes</small></span></a>
+    <nav class="main-nav" aria-label="Main"><a href="networks.html" aria-current="page">Networks</a><a href="method.html">Method</a><a href="manifesto.html">Manifesto</a><a href="contact.html">Contact</a></nav>
+    <div class="header-actions">
+      <span class="status-pill"><i></i>NETWORK PULSE · <span data-block>—</span></span>
+      <a class="btn btn-primary btn-sm" href="brief.html">Get the brief</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="mobilePanel"><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-panel" id="mobilePanel" aria-label="Mobile"><a href="networks.html">Networks</a><a href="method.html">Method</a><a href="manifesto.html">Manifesto</a><a href="contact.html">Contact</a><a class="btn btn-primary" href="brief.html">Get the brief</a></nav>
+</header>
+<div class="ticker" aria-label="Simulated market ticker"><div class="ticker-track"><span class="tick"><b>BTC</b><span class="muted">Bitcoin</span><span class="px" data-px="BTC">—</span><span class="ch" data-ch="BTC">—</span></span><span class="tick"><b>ETH</b><span class="muted">Ethereum</span><span class="px" data-px="ETH">—</span><span class="ch" data-ch="ETH">—</span></span><span class="tick"><b>SOL</b><span class="muted">Solana</span><span class="px" data-px="SOL">—</span><span class="ch" data-ch="SOL">—</span></span><span class="tick"><b>BLOCK</b><span class="px" data-block>—</span></span><span class="tick"><b>NET TPS</b><span class="px" data-tps>—</span></span><span class="tick"><span class="sim">SIMULATED DATA · NOT LIVE PRICES</span></span><span class="tick"><b>BTC</b><span class="muted">Bitcoin</span><span class="px" data-px="BTC">—</span><span class="ch" data-ch="BTC">—</span></span><span class="tick"><b>ETH</b><span class="muted">Ethereum</span><span class="px" data-px="ETH">—</span><span class="ch" data-ch="ETH">—</span></span><span class="tick"><b>SOL</b><span class="muted">Solana</span><span class="px" data-px="SOL">—</span><span class="ch" data-ch="SOL">—</span></span><span class="tick"><b>BLOCK</b><span class="px" data-block>—</span></span><span class="tick"><b>NET TPS</b><span class="px" data-tps>—</span></span><span class="tick"><span class="sim">SIMULATED DATA · NOT LIVE PRICES</span></span></div></div>
+<main id="main">
+
+<section class="wrap page-hero">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="networks.html">Networks</a><span>/</span><span>Solana</span></nav>
+  <div class="net-hero">
+    <div>
+      <div class="orb orb-sol" data-reveal>◎</div>
+      <h1 class="h-lg" data-reveal style="--d:80ms">Fast, low-cost coordination<br><span class="grad">at global scale.</span></h1>
+      <p class="lede" data-reveal style="--d:160ms">Solana keeps apps and liquidity on one high-performance shared chain, built for frequent, low-fee interaction.</p>
+    </div>
+    <div class="glass glow-edge chart-panel hud-corners" data-chart="SOL" data-reveal style="--d:200ms">
+      <div class="chart-top">
+        <div><span class="label">Solana · SOL</span><div class="chart-px">—</div><div class="chart-ch">—</div></div>
+        <div style="display:grid;gap:8px;justify-items:end"><span class="sim-badge">SIMULATED</span>
+          <div class="tabs" role="group" aria-label="Chart range"><button data-range="1D" aria-pressed="true">1D</button><button data-range="1W" aria-pressed="false">1W</button><button data-range="1M" aria-pressed="false">1M</button><button data-range="1Y" aria-pressed="false">1Y</button></div></div>
+      </div>
+      <svg class="chart" viewBox="0 0 600 220" preserveAspectRatio="none" role="img" aria-label="Simulated Solana price chart"></svg>
+      <div class="chart-foot"></div>
+    </div>
+  </div>
+</section>
+<section class="wrap section" style="padding-top:40px">
+  <div class="glance" data-reveal><div class="stat-chip"><small>Launched</small><b>2020</b></div><div class="stat-chip"><small>Consensus</small><b>PoS + PoH</b></div><div class="stat-chip"><small>Design</small><b>Parallel execution</b></div><div class="stat-chip"><small>Native asset</small><b>SOL</b></div></div>
+</section>
+<section class="wrap section" style="padding-top:60px"><div class="detail-grid"><article class="glass detail hud-corners" data-reveal style="--d:0ms"><span class="label">Architecture</span><h3>A synchronized high-speed ledger</h3><p>Proof of history acts as a cryptographic clock that helps validators order events, while proof of stake drives consensus. Transactions that don’t touch the same state can run in parallel.</p></article><article class="glass detail hud-corners" data-reveal style="--d:120ms"><span class="label">Performance</span><h3>Low-cost, frequent interaction</h3><p>The design suits trading, payments, games, collectibles, and consumer apps where people sign many transactions and fees need to stay small.</p></article><article class="glass detail hud-corners" data-reveal style="--d:0ms"><span class="label">Primary use</span><h3>Consumer and market applications</h3><p>Decentralized exchanges, stablecoin transfers, token launches, mobile experiences, and apps that need rapid state updates.</p></article><article class="glass detail hud-corners" data-reveal style="--d:120ms"><span class="label">Tradeoffs</span><h3>Performance raises operational demands</h3><ul><li><span>Validators need more powerful hardware and bandwidth.</span></li><li><span>Congestion and client diversity remain open questions.</span></li><li><span>Application security and past degraded-performance periods.</span></li></ul></article>
+  <article class="glass detail glow-edge" data-reveal style="grid-column:1/-1"><span class="label">Research questions</span><h3>What to verify</h3><ul class="checklist"><li><span>Validator concentration and client diversity</span></li><li><span>Failure rates and token issuance</span></li><li><span>App permissions and liquidity quality</span></li><li><span>Whether low fees support lasting use or short-term speculation</span></li></ul><p class="note">Network details can change—check primary protocol documentation before acting.</p></article>
+</div></section>
+<section class="wrap section"><div class="section-head"><div><h2 class="h-lg" data-reveal>Other networks.</h2></div></div>
+  <div class="net-grid" style="grid-template-columns:repeat(2,1fr)"><article class="glass net-card glow-edge" data-reveal data-tilt style="--d:0ms">
+      <div class="orb orb-btc">₿</div>
+      <h3>Bitcoin</h3><div class="net-stat">21M max supply</div>
+      <p>Proof of work. Settlement layer. A deliberately constrained monetary network built for durable global settlement.</p>
+      <div class="mini-px"><span class="muted">BTC · sim</span><span><span data-px="BTC">—</span> <span class="ch" data-ch="BTC">—</span></span></div>
+      <a class="arrow-link" href="bitcoin.html">View protocol profile <span aria-hidden="true">→</span></a></article><article class="glass net-card glow-edge" data-reveal data-tilt style="--d:120ms">
+      <div class="orb orb-eth">Ξ</div>
+      <h3>Ethereum</h3><div class="net-stat">Programmable</div>
+      <p>Smart contracts. Global compute. Applications and assets share one composable execution layer.</p>
+      <div class="mini-px"><span class="muted">ETH · sim</span><span><span data-px="ETH">—</span> <span class="ch" data-ch="ETH">—</span></span></div>
+      <a class="arrow-link" href="ethereum.html">View protocol profile <span aria-hidden="true">→</span></a></article></div></section>
+<section class="wrap section"><div class="glass glow-edge signal" data-reveal><div><h2>Keep following the evidence.</h2></div><a class="btn btn-ghost" href="contact.html">Ask about this network <span aria-hidden="true">→</span></a></div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div><a class="logo" href="index.html"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2ee6ff"/><stop offset="1" stop-color="#8b5cff"/></linearGradient></defs><path d="M24 3 42 13.5v21L24 45 6 34.5v-21Z" fill="rgba(46,230,255,.06)" stroke="url(#lg)" stroke-width="2.4" stroke-linejoin="round"/><path d="M24 24 6 13.5M24 24l18-10.5M24 24v21" stroke="url(#lg)" stroke-width="1.6" opacity=".7"/><circle cx="24" cy="24" r="4.2" fill="#ff4fd8"/><circle cx="24" cy="24" r="8" fill="none" stroke="#ff4fd8" stroke-opacity=".35"/></svg><span class="logo-text"><b>Block Atlas</b><small>Crypto Field Notes</small></span></a><p class="tagline">Research over reaction. Independent crypto intelligence, built for curious humans.</p></div>
+    <div><h2>Explore</h2><ul><li><a href="networks.html">Networks</a></li><li><a href="method.html">Method</a></li><li><a href="manifesto.html">Manifesto</a></li><li><a href="brief.html">The brief</a></li></ul></div>
+    <div><h2>Contact</h2><ul><li><a href="mailto:hello@blockatlas.xyz">hello@blockatlas.xyz</a></li><li><a href="contact.html">Ask a question</a></li></ul></div>
+  </div>
+  <div class="wrap footer-bottom"><span>© 2026 Block Atlas</span><span>Educational content only—not financial advice. Prices shown are simulated.</span></div>
+</footer>
+<button class="chat-fab" id="chatFab" aria-label="Open the Atlas AI chat" aria-expanded="false" aria-controls="chatPanel"><span class="chat-fab-core"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2ee6ff"/><stop offset="1" stop-color="#8b5cff"/></linearGradient></defs><path d="M24 3 42 13.5v21L24 45 6 34.5v-21Z" fill="rgba(46,230,255,.06)" stroke="url(#lg)" stroke-width="2.4" stroke-linejoin="round"/><path d="M24 24 6 13.5M24 24l18-10.5M24 24v21" stroke="url(#lg)" stroke-width="1.6" opacity=".7"/><circle cx="24" cy="24" r="4.2" fill="#ff4fd8"/><circle cx="24" cy="24" r="8" fill="none" stroke="#ff4fd8" stroke-opacity=".35"/></svg></span><span class="chat-fab-label">Ask Atlas AI</span></button>
+<section class="chat-panel" id="chatPanel" role="dialog" aria-label="Atlas AI chat" aria-hidden="true">
+  <header class="chat-head"><div class="chat-id"><span class="chat-avatar"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2ee6ff"/><stop offset="1" stop-color="#8b5cff"/></linearGradient></defs><path d="M24 3 42 13.5v21L24 45 6 34.5v-21Z" fill="rgba(46,230,255,.06)" stroke="url(#lg)" stroke-width="2.4" stroke-linejoin="round"/><path d="M24 24 6 13.5M24 24l18-10.5M24 24v21" stroke="url(#lg)" stroke-width="1.6" opacity=".7"/><circle cx="24" cy="24" r="4.2" fill="#ff4fd8"/><circle cx="24" cy="24" r="8" fill="none" stroke="#ff4fd8" stroke-opacity=".35"/></svg></span><div><b>Atlas AI</b><small>Crypto field guide · <i></i>online</small></div></div><button class="chat-close" id="chatClose" aria-label="Close chat">✕</button></header>
+  <div class="chat-log" id="chatLog" aria-live="polite"></div>
+  <div class="chat-chips" id="chatChips"></div>
+  <form class="chat-form" id="chatForm" autocomplete="off"><input id="chatInput" maxlength="500" placeholder="Ask a simple crypto question…" aria-label="Your question"><button type="submit" aria-label="Send"><span aria-hidden="true">→</span></button></form>
+  <p class="chat-note">Educational answers only, not financial advice. AI can make mistakes.</p>
+</section>
+<script src="chat.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

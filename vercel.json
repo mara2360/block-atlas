@@ -1,0 +1,7 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/networks/:slug(bitcoin|ethereum|solana)", "destination": "/:slug", "permanent": true }
+  ]
+}
